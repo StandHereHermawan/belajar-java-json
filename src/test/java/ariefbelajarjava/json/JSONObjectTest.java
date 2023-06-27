@@ -1,6 +1,7 @@
 package ariefbelajarjava.json;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -50,7 +51,29 @@ public class JSONObjectTest {
         } catch (JsonProcessingException e) {
             Assertions.fail(e);
         }
-
     }
 
+    @Test
+    void readJSON() throws JsonProcessingException {
+        String json = """
+                {
+                  "punya waifu": true,
+                  "firstName": "Hilmi",
+                  "lastName": "Akbar",
+                  "age": 19,
+                  "address": {
+                    "city": "Bogor",
+                    "country": "Indonesia",
+                    "street": "belum ada"
+                  }
+                }
+                """;
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        Map<String, Object> person = objectMapper.readValue(json, new TypeReference<Map<String, Object>>() {
+        });
+
+        Assertions.assertEquals("Hilmi",person.get("firstName"));
+        Assertions.assertEquals("Akbar",person.get("lastName"));
+    }
 }
