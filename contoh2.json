@@ -1,0 +1,13 @@
+{
+  "id": "1",
+  "name": "Arief",
+  "hobbies": [
+    "Nonton Youtube",
+    "Reading"
+  ],
+  "address": {
+    "street": "Bumi Pesona Asri",
+    "city": "Bandung",
+    "country": "Indonesia"
+  }
+}
