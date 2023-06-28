@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.Map;
 
-public class SerializationFeatures {
+public class SerializationFeaturesTest {
 
     @Test
     void serializationFeatures() throws JsonProcessingException {
